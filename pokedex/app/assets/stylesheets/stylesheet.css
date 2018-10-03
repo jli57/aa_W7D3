@@ -1,0 +1,8 @@
+.pokemon-icon {
+  width: 150px;
+  height: 150px;
+}
+
+.pokemon-list {
+  list-style: none; 
+}
