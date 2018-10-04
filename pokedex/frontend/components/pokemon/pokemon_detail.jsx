@@ -1,7 +1,6 @@
 import React from 'react';
-import {Route} from 'react-router-dom';
+import {Route,Link} from 'react-router-dom';
 import ItemDetailContainer from '../items/item_detail_container';
-import ItemDetail from '../items/item_detail';
 
 class PokemonDetail extends React.Component {
 
@@ -20,8 +19,7 @@ class PokemonDetail extends React.Component {
     const pkm = this.props.pokemon[this.props.match.params.pokemonId];
     return (
       <div className="pkm-detail">
-        <Route path="/pokemon/:pokemonId/item/:itemId" component={ItemDetailContainer} />
-        <div>
+        <div className="pkm-info">
           <img className="pkm-img" src={ pkm.image_url } alt={ pkm.name } />
           <h1>{ pkm.name }</h1>
           <p>Type: {pkm.poke_type}</p>
@@ -31,8 +29,13 @@ class PokemonDetail extends React.Component {
           <div className="pkm-items">
             <h2>Items</h2>
             <ul className="pkm-items-list">
-              { pkm.item_ids ? pkm.item_ids.map( (id) => <ItemDetail key={id} item={ this.props.items[id] } />) : pkm.item_ids }
+              { pkm.item_ids ? pkm.item_ids.map( (id) =>
+                <Link to={`/pokemon/${pkm.id}/item/${id}`}>
+                  <img className="item-img" src={ this.props.items[id].image_url } />
+                </Link> )
+                : pkm.item_ids }
             </ul>
+            <Route path="/pokemon/:pokemonId/item/:itemId" component={ItemDetailContainer} />
           </div>
         </div>
       </div>

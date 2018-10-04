@@ -9,14 +9,17 @@ class PokemonIndex  extends React.Component {
   }
 
   render() {
+    if(this.props.pokemon.length === 0){
+      return null;
+    }
     return (
-      <div>
-        <Route path="/pokemon/:pokemonId" component={PokemonDetailContainer}/>
+      <div className="main">
         <ul className="pokemon-list">
           { this.props.pokemon.map( pkm => (
             <PokemonIndexItem key={pkm.id} pkm={pkm} />
           )) }
         </ul>
+        <Route path="/pokemon/:pokemonId" component={PokemonDetailContainer}/>
       </div>
     );
   }
