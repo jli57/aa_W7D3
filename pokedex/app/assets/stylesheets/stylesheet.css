@@ -49,7 +49,7 @@ body, div, section, ul, li {
   height: 300px;
   background-image: linear-gradient(-45deg, #f2410c, #f2ee1f);
   border: 3px solid black;
-  border-radius: 5px;
+  border-radius: 10px;
   width: 80%;
   padding: 25px 0;
   margin: auto;
@@ -61,6 +61,7 @@ body, div, section, ul, li {
   padding: 10px;
   width: 75%;
   margin: auto;
+  background-color: white;
 }
 
 .pkm-items-list {
@@ -71,13 +72,14 @@ body, div, section, ul, li {
   border: 3px solid black;
   border-radius: 10px;
   padding: 10px;
-  margin: 0;
+  margin: auto;
   text-align: center;
+  width: 80%;
+
 }
 
 .pkm-items-list img {
-  height: 50px;
-  width: 50px;
+  height: 100px;
 }
 
 .pkm-detail {
@@ -86,8 +88,7 @@ body, div, section, ul, li {
   padding: 10px;
   text-align: center;
   margin: 10px;
-  background-color: gray;
-
+  background-color: #999999;
 }
 
 .pkm-info {
@@ -95,7 +96,6 @@ body, div, section, ul, li {
   flex-direction: column;
   justify-content: center;
   font-size: 18px;
-  padding: 25px 0;
 }
 
 .main {
@@ -110,4 +110,8 @@ body, div, section, ul, li {
 
 .pkm-detail {
   width: 80%;
+}
+
+.pkm-info > p, h1 {
+  margin: 10px;
 }
