@@ -172,7 +172,7 @@ function (_React$Component) {
       }, this.props.pokemon.map(function (pkm) {
         return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
           key: pkm.id
-        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, pkm.id), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
           className: "pokemon-icon",
           src: pkm.image_url,
           alt: pkm.name
