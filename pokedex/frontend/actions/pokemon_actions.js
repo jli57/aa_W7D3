@@ -9,10 +9,10 @@ export const receiveAllPokemon = (pokemon) => {
   };
 };
 
-export const receiveSinglePokemon = (pokemon) => {
+export const receiveSinglePokemon = (payload) => {
   return {
     type: RECEIVE_SINGLE_POKEMON,
-    pokemon
+    payload
   };
 };
 
@@ -23,5 +23,5 @@ export const requestAllPokemon = () => (dispatch) => {
 
 export const requestSinglePokemon = (id) => (dispatch) => {
   return APIUtil.fetchSinglePokemon(id)
-    .then(pokemon => dispatch(receiveSinglePokemon(pokemon)));
+    .then(res => dispatch(receiveSinglePokemon(res)));
 };

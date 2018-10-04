@@ -41,3 +41,18 @@ body, div, section, ul, li {
   flex-direction: row;
   align-items: center;
 }
+
+.pkm-img {
+  height: 300px;
+}
+
+.pkm-items-list {
+  display: flex;
+  flex-direction: row;
+  border: 3px solid black;
+}
+
+.pkm-items-list img {
+  height: 50px;
+  width: 50px;
+}

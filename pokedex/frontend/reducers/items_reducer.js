@@ -5,7 +5,7 @@ import merge from 'lodash/merge';
 const itemsReducer = (state = {},action) =>{
   switch(action.type){
     case RECEIVE_SINGLE_POKEMON:
-      let newState = merge({},state,action.items);
+      let newState = merge({}, state , action.payload.items);
       return newState;
     default:
       return state;
