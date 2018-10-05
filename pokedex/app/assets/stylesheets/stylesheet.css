@@ -115,3 +115,8 @@ body, div, section, ul, li {
 .pkm-info > p, h1 {
   margin: 10px;
 }
+
+.pkm-li {
+  color: black;
+  text-decoration: none;
+}
