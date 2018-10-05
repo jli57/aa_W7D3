@@ -391,6 +391,8 @@ function (_React$Component) {
   _createClass(PokemonForm, [{
     key: "handleSubmit",
     value: function handleSubmit(e) {
+      var _this2 = this;
+
       e.preventDefault();
       var pokemon = {
         name: this.state.name,
@@ -400,7 +402,9 @@ function (_React$Component) {
         moves: [this.state.move1, this.state.move2],
         image_url: this.state.image_url
       };
-      this.props.createNewPokemon(pokemon);
+      this.props.createNewPokemon(pokemon).then(function (data) {
+        return _this2.props.history.push("/pokemon/".concat(data.pokemon.id));
+      });
     }
   }, {
     key: "changeProperty",

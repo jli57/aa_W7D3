@@ -27,7 +27,8 @@ class PokemonForm extends React.Component{
       moves: [this.state.move1, this.state.move2],
       image_url: this.state.image_url,
     };
-    this.props.createNewPokemon(pokemon);
+    this.props.createNewPokemon(pokemon)
+    .then(data => this.props.history.push(`/pokemon/${data.pokemon.id}`));
   }
 
   changeProperty(e){
